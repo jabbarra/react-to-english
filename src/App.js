@@ -4,6 +4,20 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const data = [{ id: 1, title: 'Conan the Barbarian', year: '1982' }];
+const columns = [
+  {
+    name: 'Title',
+    selector: 'title',
+    sortable: true,
+  },
+  {
+    name: 'Year',
+    selector: 'year',
+    sortable: true,
+    right: true,
+  },
+]; 
   return (
     <div className="App">
       <header className="App-header">
@@ -19,7 +33,7 @@ function App() {
         >
           Learn React
         </a>
-        <Verbs></Verbs>
+        <Verbs columns={columns} data={data}></Verbs>
       </header>
     </div>
   );
