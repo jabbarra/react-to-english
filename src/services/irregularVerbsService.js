@@ -10,7 +10,7 @@ export function generateSPAndPPEqual(verbs) {
 function filterThreeEqual(verb) {
     return verb.infinitive === verb.simplePast && verb.infinitive === verb.pastParticiple
     && verb.simplePast === verb.pastParticiple;
-}
+};
 
 function filterSPAndPPEqual(verb) {
     if (filterThreeEqual(verb)) {
@@ -18,5 +18,5 @@ function filterSPAndPPEqual(verb) {
     }
 
     return verb.simplePast === verb.pastParticiple;
-}
+};
 
