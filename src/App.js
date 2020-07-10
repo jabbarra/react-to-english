@@ -2,32 +2,9 @@ import React from 'react';
 import IrrgularVerbs from './components/IrregularVerbs';
 import logo from './logo.svg';
 import './App.css';
+import {generateSPAndPPEqual, generateThreeEqual} from './services/irregularVerbsService'
 
 function App() {
-  const data = [{ id: 1, infinitive: 'read', simplePast: 'read', pastParticiple: 'read' },
-  { id: 2, infinitive: 'awake', simplePast: 'awoke', pastParticiple: 'awoken' },
-  { id: 3, infinitive: 'beat', simplePast: 'beat', pastParticiple: 'beaten' },
-  { id: 4, infinitive: 'catch', simplePast: 'caught', pastParticiple: 'caught' },
-  { id: 5, infinitive: 'drink', simplePast: 'drank', pastParticiple: 'drunk' },
-  { id: 6, infinitive: 'tear', simplePast: 'tore', pastParticiple: 'torn' }];
-const columns = [
-  {
-    name: 'Infinitive',
-    selector: 'infinitive',
-    sortable: true,
-  },
-  {
-    name: 'Simple Past',
-    selector: 'simplePast',
-    sortable: true
-  },
-  {
-    name: 'Past Participle',
-    selector: 'pastParticiple',
-    sortable: true
-  }
-]; 
-
   return (
     <div className="App">
       <header className="App-header">
@@ -43,7 +20,9 @@ const columns = [
         >
           Learn React
         </a>
-        <IrrgularVerbs columns={columns} data={data}></IrrgularVerbs>
+        <IrrgularVerbs  strategyFilter={null}></IrrgularVerbs>
+        <IrrgularVerbs  strategyFilter={generateSPAndPPEqual}></IrrgularVerbs>
+        <IrrgularVerbs  strategyFilter={generateThreeEqual}></IrrgularVerbs>
       </header>
     </div>
   );

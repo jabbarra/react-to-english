@@ -43,24 +43,36 @@ const customStyles = {
       },
     },
   };
+  const data = [{ id: 1, infinitive: 'read', simplePast: 'read', pastParticiple: 'read' },
+  { id: 2, infinitive: 'awake', simplePast: 'awoke', pastParticiple: 'awoken' },
+  { id: 3, infinitive: 'beat', simplePast: 'beat', pastParticiple: 'beaten' },
+  { id: 4, infinitive: 'catch', simplePast: 'caught', pastParticiple: 'caught' },
+  { id: 5, infinitive: 'drink', simplePast: 'drank', pastParticiple: 'drunk' },
+  { id: 6, infinitive: 'tear', simplePast: 'tore', pastParticiple: 'torn' }];
+const columns = [
+  {
+    name: 'Infinitive',
+    selector: 'infinitive',
+    sortable: true,
+  },
+  {
+    name: 'Simple Past',
+    selector: 'simplePast',
+    sortable: true
+  },
+  {
+    name: 'Past Participle',
+    selector: 'pastParticiple',
+    sortable: true
+  }
+]; 
 
-  const handleChange = (state) => {
-    // You can use setState or dispatch with something like Redux so we can use the retrieved data
-    debugger;
-    console.log('Selected Rows: ', state.selectedRows);
-  };
-
-const IrrgularVerbs = ({columns, data}) => (
+const IrrgularVerbs = ({strategyFilter}) => (
     <div>
-      <div>TARGETS</div>
+      <div><div>three equal</div><div>sp and pp equal</div></div>
         <DataTable title="Irregular Verbs" 
          columns={columns}
-         data={generateThreeEqual(data)} 
-         customStyles={customStyles}></DataTable>
-
-<DataTable title="Irregular Verbs" 
-         columns={columns}
-         data={generateSPAndPPEqual(data)} 
+         data={strategyFilter === null? data: strategyFilter(data)} 
          customStyles={customStyles}></DataTable>
     </div>
 );
