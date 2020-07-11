@@ -2,13 +2,11 @@ import React from  'react';
 import DataTable, {createTheme} from 'react-data-table-component';
 import DataTableDecorator from './../ui-decorators/DataTableDecorator';
 import {generateThreeEqual, generateSPAndPPEqual} from './../services/irregularVerbsService';
+import data from './../data/irregularVerbs'
+import {Button} from '@material-ui/core';
+import {AccessAlarm, Delete} from '@material-ui/icons'
 
-const data = [{ id: 1, infinitive: 'read', simplePast: 'read', pastParticiple: 'read' },
-  { id: 2, infinitive: 'awake', simplePast: 'awoke', pastParticiple: 'awoken' },
-  { id: 3, infinitive: 'beat', simplePast: 'beat', pastParticiple: 'beaten' },
-  { id: 4, infinitive: 'catch', simplePast: 'caught', pastParticiple: 'caught' },
-  { id: 5, infinitive: 'drink', simplePast: 'drank', pastParticiple: 'drunk' },
-  { id: 6, infinitive: 'tear', simplePast: 'tore', pastParticiple: 'torn' }];
+
 const columns = [
   {
     name: 'Infinitive',
@@ -29,7 +27,10 @@ const columns = [
 
 const IrrgularVerbs = ({strategyFilter}) => (
     <div>
-      <div><div>three equal</div><div>sp and pp equal</div></div>
+      <div><div> <Button variant="contained" color="primary" href="#three" endIcon={<Delete color="action" fontSize="large"></Delete>} >three equal</Button> <AccessAlarm>der</AccessAlarm>
+        </div>
+        <div><Button variant="contained" color="primary" href="#thwo" >sp and pp equal</Button>
+          </div></div>
         <DataTableDecorator 
          title="Irregular Verbs" 
          columns={columns}
