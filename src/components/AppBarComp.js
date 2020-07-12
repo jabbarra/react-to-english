@@ -2,9 +2,13 @@ import React from 'react';
 import {AppBar, Toolbar, Typography, makeStyles, IconButton, Button} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 
+const DRAWER_WIDTH = 240;
 
 const useStyles = makeStyles(theme => ({
-    offset: theme.mixins.toolbar,
+    appBar: {
+          width: `calc(100% - ${DRAWER_WIDTH}px)`,
+          marginLeft: DRAWER_WIDTH
+      },
     menuButton: {
         marginRight: theme.spacing(2),
       },
@@ -16,8 +20,7 @@ const useStyles = makeStyles(theme => ({
 const AppBarComp = () =>{
     const classes = useStyles();
     return (
-    <div>
-        <AppBar position="fixed" color="primary">
+    <AppBar position="fixed" color="primary" className={classes.appBar}>
           <Toolbar>
               <IconButton aria-label="menu" color="inherit" className={classes.menuButton}>
                   
@@ -30,9 +33,7 @@ const AppBarComp = () =>{
               Login
             </Button>
           </Toolbar>
-        </AppBar>
-        <div className={classes.offset}></div>
-    </div>)
+        </AppBar>)
 };
 
 export default AppBarComp;

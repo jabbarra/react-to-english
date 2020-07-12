@@ -5,13 +5,16 @@ import './App.css';
 import {generateSPAndPPEqual, generateThreeEqual} from './services/irregularVerbsService'
 import AppBarComp from './components/AppBarComp';
 import ListComp from './components/ListComp';
+import ContainerComp from './components/ContainerComp';
 
 function App() {
   return (
     
     <div className="App">
-            <AppBarComp/>
-            <ListComp/>
+      <ContainerComp/>
+  {/* <!--<AppBarComp/>  <ListComp/>>*/}
+     
+           
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
