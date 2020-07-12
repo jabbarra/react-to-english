@@ -3,10 +3,15 @@ import IrrgularVerbs from './components/IrregularVerbs';
 import logo from './logo.svg';
 import './App.css';
 import {generateSPAndPPEqual, generateThreeEqual} from './services/irregularVerbsService'
+import AppBarComp from './components/AppBarComp';
+import ListComp from './components/ListComp';
 
 function App() {
   return (
+    
     <div className="App">
+            <AppBarComp/>
+            <ListComp/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

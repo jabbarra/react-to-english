@@ -5,6 +5,7 @@ import {generateThreeEqual, generateSPAndPPEqual} from './../services/irregularV
 import data from './../data/irregularVerbs'
 import {Button} from '@material-ui/core';
 import {AccessAlarm, Delete} from '@material-ui/icons'
+import AppBarComp from './AppBarComp';
 
 
 const columns = [
